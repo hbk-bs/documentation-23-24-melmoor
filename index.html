@@ -1,19 +1,293 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="x-ua-compatible" content="ie=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Page Title</title>
-		<meta name="description" content="something" />
-		<meta name="author" content="me" />
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentation</title>
+    <style>
 
-		<link rel="stylesheet" type="text/css" href="/style.css" />
-	</head>
-	<body>
-		<h1>Hello World</h1>
-		<img src="/assets/images/kitten.png" />
-		<script type="text/javascript" src="/index.js"></script>
-	</body>
+
+     /* Allgemeine Stile für die gesamte Seite */
+     body {
+    font-family: 'Verdana', Times, serif;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(41, 41, 41); /* Hintergrundfarbe auf Schwarz ändern */
+    color: white; /* Textfarbe auf Weiß ändern */
+    text-align: left; 
+    }
+
+    main {
+    padding: 40px;
+    margin: 0 auto; /* Hauptinhalt horizontal zentrieren */
+    max-width: 800px; 
+    }
+
+    main img {
+    display: block; 
+    margin: 0 auto 20px;
+    }
+
+    /* Stile für die Navigationsleiste */
+        nav {
+            background-color: #272727;
+            padding: 5px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 50px;
+        }
+        nav ul li a {
+        color: rgb(255, 255, 255); /* Textfarbe auf Weiß ändern */
+        text-decoration: none;
+        font-weight: bold;
+        }
+        
+
+    /* Stile für den Header 
+        header {
+            background-color: #ffffff;
+            color: #ffffffc7;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            margin-left: -10px;
+        }
+        header img {
+            width: 150px;
+            margin-right: 10px;
+        }  */
+    
+        main {
+            padding: 40px;
+        }
+        main p:first-child {
+            margin-top: 50px;
+        }
+        main img {
+            max-width: 95%;
+            height: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+
+    /* Abstand um den Text herum und Bilder*/
+        main h2:first-of-type {
+        margin-top: 150px; 
+        }
+        main h2, main h3 {
+            margin-top: 10px; 
+            margin-bottom: 30px;
+            margin-left: 20px;
+        }
+        main p {
+            margin-left: 20px;
+            margin-right: 20px; 
+            margin-top: 40px; 
+        }
+        main img {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 30px; 
+        }
+
+
+    /*little tools bilder*/
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image-container img {
+            width: 45%;
+            margin-right: 20px;
+        }
+
+
+    /* Gestrichelte Linie */
+        section:not(:last-child) {
+            border-bottom: 1px dashed #394d41;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+    <!-- Navigationsleiste -->
+    <nav>
+        <ul>
+            <li><a href="#section1">Projekt 1</a></li>
+            <li><a href="#section2">Projekt 2</a></li>
+            <li><a href="#section3">Projekt 3</a></li>
+            <li><a href="#section4">Fazit</a></li>
+        </ul>
+    </nav>
+
+
+  <!-- Header -->
+<div style="display: flex; align-items: center;">
+    <img src="hauptbild.png" style="width: 100%;">
+</div>
+
+
+<!-- Hauptinhalt -->
+    <main>
+        <!-- 
+        <p style="margin-bottom: 250px; background-color: #dbdbdb; color: rgb(0, 0, 0); padding: 20px; width: 94%; height: auto;">
+        Mit dieser Website will ich meine 
+        Arbeiten, die im Laufe des ersten 
+        Semesters entstanden sind, präsentieren und erklären wie sie funktionieren.
+        </p> 
+        -->
+		 
+
+    <!--Projekt 1-->
+        <section id="section1">
+            <h2>Projekt 1</h2>
+            <h3>Brush Drawing Tool (little tools)</h3>
+            <p>
+            Bei dieser Aufgabe bestand die Herausforderung darin, ein kleines Werkzeug zu entwickeln, ein sogenanntes "little tool". 
+            Meine Idee war es, einen Pinsel zu entwerfen, der sich nach einem Mausklick von einem Kreis zu einem Quadrat verwandelt. 
+            Die Nähe und Dichte der Formen hängt davon ab, wie langsam der Mauszeiger bewegt wird. Außerdem ist es möglich, die Größe des Pinsels mit den Pfeiltasten zu vergrößern oder zu verkleinern.            
+            </p>
+            <p>
+            Der gegebene HTML-Code erstellt eine einfache Webseite für ein Zeichenwerkzeug mit einer Canvas-Anzeige. Hier ist der dazugehörige code:
+            </p>
+            <img src="index.png">
+            <p>
+            Die eigentliche Interaktivität und das Zeichenwerkzeug werden in der JavaScript-Datei "sketch.js" implementiert, während das Erscheinungsbild der Seite in der CSS-Datei "style.css" gesteuert wird.
+            </p>
+			<img src="sketch.png">
+            
+            <p>
+            - brushSize: Größe des Pinsels wird standartmäßig auf 10 gesetzt.
+            </p>
+            <p>
+            - currentBrush: aktuelle Pinselart wird standartmäßig auf "circle" gesetzt.
+            </p>
+            <p>
+            - mouseIsPressed: ist die Maustaste gedrückt? Dann entweder "circle oder "square" malen.
+            </p>
+            <p>
+            - keyPressed (): Wird aufgerufen, wenn eine Taste gedrückt wird.
+            Ändert die Pinselgröße mithilfe der Pfeiltasten nach oben (UP_ARROW) und unten (DOWN_ARROW). Die Pinselgröße wird um 5 Pixel erhöht oder verringert, wenn die Mindestgröße von 5 nicht unterschritten wird.
+            </p>
+            <p> 
+            - mouseClicked: ändert die Pinselart.
+            </p>      
+            <p> 
+            Zusammenfassend ermöglicht dieser Code das Zeichnen von Kreisen und Quadraten auf einer Canvas-Anzeige mit der Maus. Die Pinselgröße kann mit den Pfeiltasten angepasst werden, und die Pinselart kann durch einen Mausklick gewechselt werden.
+            </p>
+			<img src="style.png">
+			<p>
+            Hier wird der gesamte Inhalt der Webseite zentriert auf der Seite dargestellt, und ein Container mit einer schwarzen Umrandung dient wahrscheinlich dazu, den Zeichenbereich (Canvas) auf der Seite visuell zu markieren.
+            </p>
+            <div class="image-container">
+				<img src="little tools 1.png">
+				<img src="little tools 2.png">
+			</div>
+        </section>
+
+
+
+     <!--Projekt 2-->
+        <section id="section2">
+            <h2>Projekt 2</h2>
+            <h3>"Mels weblog"</h3>
+            <p>
+            Bei diesem Projekt lautete die Aufgabe, eine eigene Website zu erstellen auf der eine App erklärt wird. Meine Wahl fiel auf Procreate, da ich diese am häufigsten verwende. 
+            </p>
+            <p>
+            Der HTML-Code beschreibt die Struktur der Website "Mels Weblog".</p>
+            <img src="html 2.png"> 
+            <p>
+            Hier eine kurze Erklärung:
+            </p>
+            <p>
+            -html: markiert den Beginn und das Ende des HTML-Dokuments und gibt die Sprache an.
+            </p>
+            <p>
+            -head: dort befinden sich die Metadaten.
+            </p>
+            <p>
+            -body: sichtbarer Inhalt der Website.
+            </p>
+            <p>
+            -header: Überschrift der Website.
+            </p>
+            <p>
+            -p: Element mit verschiedenen Abschnitten von Text, die durch h2-Tags für die Untertitel und pre-Tags für den Tipp strukturiert sind.
+            </p>
+            <p>
+            Der vorliegende CSS-Code definiert das Styling für eine Webseite.
+            </p>
+            <img src="style 2.png">
+            <p>
+                Insgesamt steuert der Code das Erscheinungsbild der Webseite durch Definitionen für Schriftarten, Farben, Abstände und Hintergrundbilder.
+            </p>
+            <p>Wenn diese Codes dann ausgeführt werden, ensteht diese Website die ich gebaut habe.</p>
+            <img src="mel webblog.png">
+        </section>
+
+
+     <!--Projekt 3-->    
+        <section id="section3">
+            <h2>Projekt 3</h2>
+            <h3>"My sleeping uncle"</h3>
+            <p>
+            Dieses Gruppenprojekt wurde gemeinsam mit dem gesamten Kurs entwickelt. In diesem Projekt haben wir ein Spiel namens "My Sleeping Uncle" entworfen, bei dem es darum geht, leise ein Sandwich zu holen, ohne den Onkel zu wecken. Dabei ist Vorsicht geboten, da jeder Schritt das Monster wecken könnte. Es gab verschiedene Teams, die jeweils ihre eigenen Aufgaben und Zuständigkeitsbereiche hatten. Ich war Teil des Design-Teams, das für die Gestaltung des gesamten Projekts verantwortlich war. Das bedeutet, dass wir uns Gedanken darüber machen mussten, wie die Raumgestaltung, die Farbgebung, die Webseite und die Charaktere aussehen sollten.
+            </p>
+            <p>
+            Ich habe mich darum gekümmert, das Monster bzw. den Onkel zu entwerfen und die Farben dafür auszuwählen. Danach habe ich die verschiedenen Zustände des Monsters animiert, von dem Schlafen über das kurz vor dem Aufwachen bis hin zum Jumpscare, der erscheint, wenn man das Spiel verliert.
+            </p>
+            <p>
+            Hier sieht man die Skizze für das Design des Monsters und der Entwuf wo dieser schläft.
+            </p>
+			<img src="monster.png">
+			<img src="monster 2.png">
+            <p>
+            Da am Anfang noch unklar war, wie wir den Raum gestalten würden, habe ich zur Sicherheit auch einen Raum für das Monster und das gesamte Geschehen entworfen.            
+            </p>
+            <img src="monster 3.png">
+            <p>
+            Im Anschluss folgen die fertigen Animationen, die im Spiel durch einen Projektor auf einer Leinwand aus Folie visualisiert werden.            
+            </p>
+            <img src="Normal_Schlafen.GIF">
+            <img src="fast aufwachen.GIF">
+            <div style="width: 100%; text-align: center;">
+                <video controls style="width: 100%; max-width: 500px; margin: auto;">
+                    <source src="Aufwachen.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+
+     <!--Fazit-->
+        <section id="section4">
+        <h2>Fazit</h2>
+        <p>
+        In diesem Semester konnte ich durch den Kurs "Grundlagen der digitalen Gestaltung" einen Einblick in die Welt des Codings gewinnen. Anfangs war ich ehrlich gesagt überrascht und fühlte mich überfordert, aber nach und nach begann ich, immer mehr zu verstehen. Dadurch entwickelte ich zunehmend Spaß daran, eigene Codes zu schreiben und meine Ideen zu visualisieren. Auch wenn ich noch nicht alles verstehe, arbeite ich daran, mein Verständnis zu vertiefen, und freue mich darauf, noch mehr zu lernen. Besonders faszinierend fand ich es, meine eigene Website zu gestalten. Obwohl sie noch nicht perfekt ist, macht es mir Spaß, damit zu experimentieren und zu sehen, welche Veränderungen möglich sind und was ich bereits kann. Das Gruppenprojekt war ebenfalls sehr spannend, da jeder seinen Beitrag leistete, der am Ende zu einem stimmigen Ganzen zusammengefügt wurde.
+        </p>
+        <p>
+        -mel☆
+        </p>
+        </section>
+
+
+    </main>
+</body>
 </html>
