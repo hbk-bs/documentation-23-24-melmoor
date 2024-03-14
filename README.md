@@ -1,3 +1,19 @@
+**Dokumentation melmoor**
+
+**Grundlagen der digitalen Kommunikation 1 WiSe 23/24.**
+
+
+Dies ist die Dokumentation von Melanie Moor. In meiner Dokumentation präsentiere und erläutere ich folgende Projekte:
+
+-little tools
+
+-Mels Weblog
+
+-My Sleeping Uncle
+
+
+
+__________________________________________________________________________________________________________________________
 MIT License
 
 Copyright (c) [2024] [MelanieMoor]
