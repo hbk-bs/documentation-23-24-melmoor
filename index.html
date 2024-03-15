@@ -86,7 +86,7 @@
         main h2:first-of-type {
         margin-top: 150px; 
         }
-        main h2, main h3 {
+        main h2, main h3, main h1 {
             margin-top: 10px; 
             margin-bottom: 30px;
             margin-left: 20px;
@@ -130,6 +130,7 @@
     <!-- Navigationsleiste -->
     <nav>
         <ul>
+            <li><a href="#section5">Home</a></li>
             <li><a href="#section1">Projekt 1</a></li>
             <li><a href="#section2">Projekt 2</a></li>
             <li><a href="#section3">Projekt 3</a></li>
@@ -154,6 +155,19 @@
         </p> 
         -->
 		 
+    <!--Einleitung-->
+        <section id="section5">
+            <p>═══════════════════════════════ ⋆★⋆ ════════════════════════════════</p>
+            <h1>Hi!</h1>
+            <p>
+            Willkommen zur Dokumentation meiner ersten Semesterprojekte! Hier findest du eine Zusammenstellung der Arbeiten, 
+            die ich im Verlauf des Semesters entwickelt habe, sowie eine Beschreibung ihrer Entstehung und Funktionsweise. 
+            Diese Website dient dazu, einen Einblick in meine kreative Entwicklung und meine Fähigkeiten im Bereich der digitalen
+            Gestaltung zu geben. Von Web-Werkzeuge bis hin zu Website Designs und Spielen, hier erfährst du mehr über die Herausforderungen,
+            Lösungen und Erkenntnisse, die ich gesammelt habe. Viel Spaß :)
+            </p>
+            <p>═══════════════════════════════ ⋆★⋆ ════════════════════════════════</p>
+        </section>
 
     <!--Projekt 1-->
         <section id="section1">
@@ -161,40 +175,66 @@
             <h3>Brush Drawing Tool (little tools)</h3>
             <p>
             Bei dieser Aufgabe bestand die Herausforderung darin, ein kleines Werkzeug zu entwickeln, ein sogenanntes "little tool". 
-            Meine Idee war es, einen Pinsel zu entwerfen, der sich nach einem Mausklick von einem Kreis zu einem Quadrat verwandelt. 
-            Die Nähe und Dichte der Formen hängt davon ab, wie langsam der Mauszeiger bewegt wird. Außerdem ist es möglich, die Größe des Pinsels mit den Pfeiltasten zu vergrößern oder zu verkleinern.            
+            Da ich gerne mit Procreate arbeite, kam ich auf die Idee einen Pinsel zu entwickeln, 
+            welcher sich nach einem Mausklick von einem Kreis zu einem Quadrat verwandelt. 
+            Die Nähe und Dichte der Formen hängt davon ab, wie langsam der Mauszeiger bewegt wird. 
+            Außerdem ist es möglich, die Größe des Pinsels mit den Pfeiltasten zu vergrößern oder zu verkleinern.            
             </p>
             <p>
-            Der gegebene HTML-Code erstellt eine einfache Webseite für ein Zeichenwerkzeug mit einer Canvas-Anzeige. Hier ist der dazugehörige code:
+            Anfangs fiel es mir schwer, meine Idee umzusetzen, und ich fühlte mich überfordert. 
+            Dennoch habe ich verschiedenes ausprobiert, bis ich zu dieser Lösung gelangte:
             </p>
             <img src="assets\images\index.png">
             <p>
-            Die eigentliche Interaktivität und das Zeichenwerkzeug werden in der JavaScript-Datei "sketch.js" implementiert, während das Erscheinungsbild der Seite in der CSS-Datei "style.css" gesteuert wird.
+                Kurz gesagt erstellt dieser HTML-Code eine Website für das Zeichenwerkzeug her.
+            </p>    
+            <p>
+                Hier ist eine kurze Zusammenfassung des Codes:
+                Der Code beginnt mit der Deklaration des Dokumenttyps als HTML5 "!DOCTYPE html" und stellt 
+                die Sprache der Seite auf Englisch "html lang="en"" ein. Im "head"-Bereich werden Metadaten 
+                festgelegt, darunter die Zeichenkodierung (UTF-8), die CSS-Datei für das Styling und die p5.js-Bibliothek für 
+                interaktives Zeichnen. Das "title"-Tag setzt den Titel der Webseite.
+                Der sichtbare Inhalt der Seite befindet sich im "body"-Bereich. Ein "div"-Container mit 
+                der ID "canvas-container" wird erstellt für die Leinwand (Canvas).
+                Zum Schluss wird das HTML-Dokument mit "/html" abgeschlossen.           
+            </p>
+            <p>
+            Bei der sketch.js geht es darum, wie das Zeichenwerkzeug interagieren soll und welche Auslöser
+            dieser braucht um ausgeführt zu werden.
             </p>
 			<img src="assets\images\sketch.png">
-            
             <p>
-            - brushSize: Größe des Pinsels wird standartmäßig auf 10 gesetzt.
+            Hier sind die einzelnen Elemente erklärt:
+            </p>                                                
+            <p>
+            - Die Variable "brushSize" speichert die Größe des Pinsels standardmäßig auf 10 Pixel festgelegt. 
+            "currentBrush" speichert den Pinseltyp standardmäßig auf Kreis eingestellt.
             </p>
             <p>
-            - currentBrush: aktuelle Pinselart wird standartmäßig auf "circle" gesetzt.
+            - Die "setup()"-Funktion erstellt eine Zeichenfläche mit einer Größe von 800x600 Pixeln
+            und einem weißen Hintergrund.
             </p>
             <p>
-            - mouseIsPressed: ist die Maustaste gedrückt? Dann entweder "circle oder "square" malen.
-            </p>
-            <p>
-            - keyPressed (): Wird aufgerufen, wenn eine Taste gedrückt wird.
-            Ändert die Pinselgröße mithilfe der Pfeiltasten nach oben (UP_ARROW) und unten (DOWN_ARROW). Die Pinselgröße wird um 5 Pixel erhöht oder verringert, wenn die Mindestgröße von 5 nicht unterschritten wird.
+            - Die "draw()"-Funktion enthält die Zeichen Funktion für die Canvas. Wenn die Maustaste gedrückt wird, wird abhängig vom aktuellen
+             Pinseltyp entweder ein Kreis oder ein Quadrat an der Position des Mauszeigers gezeichnet.
             </p>
             <p> 
-            - mouseClicked: ändert die Pinselart.
+            - "keyPressed()" ändert die Pinselgröße, wenn die Pfeiltasten nach oben oder unten gedrückt werden.
             </p>      
             <p> 
-            Zusammenfassend ermöglicht dieser Code das Zeichnen von Kreisen und Quadraten auf einer Canvas-Anzeige mit der Maus. Die Pinselgröße kann mit den Pfeiltasten angepasst werden, und die Pinselart kann durch einen Mausklick gewechselt werden.
+            -"mouseClicked()" wechselt zwischen dem Kreis- und Quadratpinsel, jedes Mal wenn die Maus geklickt wird.
+            </p>
+            <p>
+            Zusammenfassend ermöglicht dieser Code das Zeichnen von Kreisen und Quadraten auf einer Leinwand (Canvas-Anzeige) mit der Maus. 
+            Die Pinselgröße kann mit den Pfeiltasten angepasst werden, und die Pinselart kann durch einen Mausklick gewechselt werden.
+            </p>
+            <p>
+            Abschließend wird in der "style.css" der gesamte Inhalt der Webseite zentriert auf der Seite dargestellt, und ein Container
+            mit einer schwarzen Umrandung dient dazu, den Zeichnbereich (Canvas) auf der Seite visuell mit schwarz zu verdeutlichen.
             </p>
 			<img src="assets\images\style.png">
 			<p>
-            Hier wird der gesamte Inhalt der Webseite zentriert auf der Seite dargestellt, und ein Container mit einer schwarzen Umrandung dient wahrscheinlich dazu, den Zeichenbereich (Canvas) auf der Seite visuell zu markieren.
+            Hier sieht man das Endergebniss oder eher gesagt die zwei verschiedenen Pinselarten zum Abschluss.            
             </p>
             <div class="image-container">
 				<img src="assets\images\little tools 1.png">
@@ -209,37 +249,30 @@
             <h2>Projekt 2</h2>
             <h3>"Mels weblog"</h3>
             <p>
-            Bei diesem Projekt lautete die Aufgabe, eine eigene Website zu erstellen auf der eine App erklärt wird. Meine Wahl fiel auf Procreate, da ich diese am häufigsten verwende. 
+            Für dieses Projekt bestand die Aufgabe darin, eine eigene Website zu erstellen, auf der eine App erklärt 
+            wird. Ich entschied mich erneut für Procreate, da ich diese Anwendung am häufigsten nutze.
+            Zunächst überlegte ich mir, wie mein Weblog aussehen sollte. Ich entschied mich dafür, alles 
+            einfach zu halten, um den Fokus auf den Inhalt zu legen. Mein Ziel war es, trotzdem eine anschauliche
+            Website durch das spielen von Farben und Bildern zu schaffen.
             </p>
             <p>
-            Der HTML-Code beschreibt die Struktur der Website "Mels Weblog".</p>
+            Der HTML-Code startet ähnlich wie im ersten Projekt. Es werden erst die Sprache und die Metadaten
+            bestimmt, und dann konnte ich mit dem Erstellen der Website beginnen.            
+            </p>
             <img src="assets\images\html 2.png"> 
             <p>
-            Hier eine kurze Erklärung:
-            </p>
-            <p>
-            -html: markiert den Beginn und das Ende des HTML-Dokuments und gibt die Sprache an.
-            </p>
-            <p>
-            -head: dort befinden sich die Metadaten.
-            </p>
-            <p>
-            -body: sichtbarer Inhalt der Website.
-            </p>
-            <p>
-            -header: Überschrift der Website.
-            </p>
-            <p>
-            -p: Element mit verschiedenen Abschnitten von Text, die durch h2-Tags für die Untertitel und pre-Tags für den Tipp strukturiert sind.
-            </p>
-            <p>
-            Der vorliegende CSS-Code definiert das Styling für eine Webseite.
+            Ich begann mit dem "header", um die Überschrift der Website festzulegen, die ich "Mels Weblog" nannte. 
+            Um ein Bild neben dem Titel zu platzieren, fügte ich dann im "body", dem unteren Teil der Website, 
+            mein Bild mit "img src="header.png" alt=""" hinzu. Durch Verwendung von Tags wie "p", "h2",
+            "pre", und "code" konnte ich Texte einfügen und ihre Größe oder Schriftart variieren. Wie beim
+            vorherigen Projekt wird alles mit "/html" geschlossen.            
             </p>
             <img src="assets\images\style 2.png">
             <p>
-                Insgesamt steuert der Code das Erscheinungsbild der Webseite durch Definitionen für Schriftarten, Farben, Abstände und Hintergrundbilder.
+            Insgesamt steuert der Code das Erscheinungsbild der Website durch Definitionen für Schriftarten 
+            ("body{...}"), Farben ("h1,strong{...}"), Abstände ("margin/"padding{...}") und Hintergrundbilder ("background:...").
             </p>
-            <p>Wenn diese Codes dann ausgeführt werden, ensteht diese Website die ich gebaut habe.</p>
+            <p>Wenn diese Codes dann ausgeführt werden, ensteht dann meine Website die ich gebaut habe.</p>
             <img src="assets\images\mel webblog.png">
         </section>
 
@@ -249,10 +282,26 @@
             <h2>Projekt 3</h2>
             <h3>"My sleeping uncle"</h3>
             <p>
-            Dieses Gruppenprojekt wurde gemeinsam mit dem gesamten Kurs entwickelt. In diesem Projekt haben wir ein Spiel namens "My Sleeping Uncle" entworfen, bei dem es darum geht, leise ein Sandwich zu holen, ohne den Onkel zu wecken. Dabei ist Vorsicht geboten, da jeder Schritt das Monster wecken könnte. Es gab verschiedene Teams, die jeweils ihre eigenen Aufgaben und Zuständigkeitsbereiche hatten. Ich war Teil des Design-Teams, das für die Gestaltung des gesamten Projekts verantwortlich war. Das bedeutet, dass wir uns Gedanken darüber machen mussten, wie die Raumgestaltung, die Farbgebung, die Webseite und die Charaktere aussehen sollten.
+            Dieses Gruppenprojekt wurde gemeinsam mit dem gesamten Kurs entwickelt. In diesem Projekt haben wir ein Spiel 
+            namens "My Sleeping Uncle" entworfen, bei dem es darum geht, leise ein Sandwich zu holen, ohne den Onkel zu
+            wecken. Dabei ist Vorsicht geboten, da jeder Schritt das Monster wecken könnte. Es gab verschiedene Teams,
+            die jeweils ihre eigenen Aufgaben und Zuständigkeitsbereiche hatten. Ich war Teil des Design-Teams, das 
+            für die Gestaltung des gesamten Projekts verantwortlich war. Das bedeutet, dass wir uns Gedanken darüber
+            machen mussten, wie die Raumgestaltung, die Farbgebung, die Webseite und die Charaktere aussehen sollten.
             </p>
             <p>
-            Ich habe mich darum gekümmert, das Monster bzw. den Onkel zu entwerfen und die Farben dafür auszuwählen. Danach habe ich die verschiedenen Zustände des Monsters animiert, von dem Schlafen über das kurz vor dem Aufwachen bis hin zum Jumpscare, der erscheint, wenn man das Spiel verliert.
+            Ich habe mich darum gekümmert, das Monster bzw. den Onkel zu entwerfen und die Farben dafür auszuwählen. 
+            Danach habe ich die verschiedenen Zustände des Monsters animiert, von dem Schlafen über das kurz vor dem Aufwachen 
+            bis hin zum Jumpscare, der erscheint, wenn man das Spiel verliert. 
+            </p>
+            <p>
+            Obwohl ich bereits viel Erfahrung mit Procreate gesammelt hatte, hatte ich nie versucht, dort Animationen zu 
+            erstellen, was mich zunächst abgeschreckt hatte. Am Ende stellte sich jedoch heraus, dass es gar nicht so kompliziert 
+            ist, wie ich befürchtet hatte. Es ist ähnlich wie das Malen eines normalen Bildes in Procreate, nur dass sich das 
+            Bild wiederholt und man minimale Änderungen vornehmen muss, um die Bewegung natürlich darzustellen. Dabei wird das 
+            zuvor geänderte Bild immer leicht transparent auf der neuen Leinwand angezeigt, damit man sich daran orientieren 
+            und bestimmte Stellen direkt übernehmen kann. Daie fertige Animatuin habe ich dann als MP4-Datei exportiert und dem 
+            Codeteam übergeben, damit sie die fehlenden Sounds hinzufügen können.
             </p>
             <p>
             Hier sieht man die Skizze für das Design des Monsters und der Entwuf wo dieser schläft.
@@ -260,11 +309,13 @@
 			<img src="assets\images\monster.png">
 			<img src="assets\images\monster 2.png">
             <p>
-            Da am Anfang noch unklar war, wie wir den Raum gestalten würden, habe ich zur Sicherheit auch einen Raum für das Monster und das gesamte Geschehen entworfen.            
+            Da am Anfang noch unklar war, wie wir den Raum gestalten würden, habe ich zur Sicherheit auch einen 
+            Raum für das Monster und das gesamte Geschehen entworfen.            
             </p>
             <img src="assets\images\monster 3.png">
             <p>
-            Im Anschluss folgen die fertigen Animationen, die im Spiel durch einen Projektor auf einer Leinwand aus Folie visualisiert werden.            
+            Im Anschluss folgen die fertigen Animationen, die im Spiel durch einen Projektor auf einer Leinwand 
+            aus Folie visualisiert werden.            
             </p>
             <img src="assets\images\Normal_Schlafen.GIF">
             <img src="assets\images\fast aufwachen.GIF">
@@ -280,7 +331,15 @@
         <section id="section4">
         <h2>Fazit</h2>
         <p>
-        In diesem Semester konnte ich durch den Kurs "Grundlagen der digitalen Gestaltung" einen Einblick in die Welt des Codings gewinnen. Anfangs war ich ehrlich gesagt überrascht und fühlte mich überfordert, aber nach und nach begann ich, immer mehr zu verstehen. Dadurch entwickelte ich zunehmend Spaß daran, eigene Codes zu schreiben und meine Ideen zu visualisieren. Auch wenn ich noch nicht alles verstehe, arbeite ich daran, mein Verständnis zu vertiefen, und freue mich darauf, noch mehr zu lernen. Besonders faszinierend fand ich es, meine eigene Website zu gestalten. Obwohl sie noch nicht perfekt ist, macht es mir Spaß, damit zu experimentieren und zu sehen, welche Veränderungen möglich sind und was ich bereits kann. Das Gruppenprojekt war ebenfalls sehr spannend, da jeder seinen Beitrag leistete, der am Ende zu einem stimmigen Ganzen zusammengefügt wurde.
+        In diesem Semester konnte ich durch den Kurs "Grundlagen der digitalen Gestaltung" einen Einblick 
+        in die Welt des Codings gewinnen. Anfangs war ich ehrlich gesagt überrascht und fühlte mich überfordert,
+         aber nach und nach begann ich, immer mehr zu verstehen. Dadurch entwickelte ich zunehmend Spaß daran, 
+         eigene Codes zu schreiben und meine Ideen zu visualisieren. Auch wenn ich noch nicht alles verstehe, 
+         arbeite ich daran, mein Verständnis zu vertiefen, und freue mich darauf, noch mehr zu lernen. Besonders 
+         faszinierend fand ich es, meine eigene Website zu gestalten. Obwohl sie noch nicht perfekt ist, macht 
+         es mir Spaß, damit zu experimentieren und zu sehen, welche Veränderungen möglich sind und was ich bereits
+          kann. Das Gruppenprojekt war ebenfalls sehr spannend, da jeder seinen Beitrag leistete, der am Ende zu 
+          einem stimmigen Ganzen zusammengefügt wurde.
         </p>
         <p>
         -mel☆

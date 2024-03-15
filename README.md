@@ -1,3 +1,20 @@
+**Dokumentation melmoor**
+
+**Grundlagen der digitalen Kommunikation 1 WiSe 23/24.**
+
+
+Dies ist die Dokumentation von Melanie Moor. In meiner Dokumentation präsentiere und erläutere ich folgende Projekte:
+
+-little tools
+
+-Mels Weblog
+
+-My Sleeping Uncle
+
+Hier ist der Link zu meiner Website -> https://documentation-melmoor.netlify.app
+
+
+__________________________________________________________________________________________________________________________
 MIT License
 
 Copyright (c) [2024] [MelanieMoor]
@@ -20,4 +37,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-(https://documentation-melmoor.netlify.app)
